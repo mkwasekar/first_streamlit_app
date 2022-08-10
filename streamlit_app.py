@@ -41,6 +41,9 @@ my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_data_row = my_cur.fetchone()
 streamlit.text("Hello from Snowflake:")
 streamlit.text(my_data_row)
+
 my_data_row=my_cur.fetchone()
 streamlit.header("The fruit load list contains:"
 streamlit.dataframe(my_data_row)
+my_cur.execute("insert into fruit_load_list values ('from sreamlit') ")
+                 
